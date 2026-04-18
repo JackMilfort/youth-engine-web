@@ -3,42 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youth Engine | Automation & Media</title>
+    <title>Youth Engine | Potencia tu Presencia Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #f97316;
+            --primary-hover: #ea580c;
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text: #f8fafc;
+            --text-alt: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            padding: 1.5rem 10%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            padding: 2rem;
-            border: 1px solid #334155;
-            border-radius: 1rem;
-            background: rgba(30, 41, 59, 0.5);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        h1 { color: #f97316; margin-bottom: 0.5rem; }
-        p { color: #94a3b8; line-height: 1.6; }
-        .links { margin-top: 2rem; }
-        a { color: #22c55e; text-decoration: none; margin: 0 10px; font-weight: bold; }
-        a:hover { text-decoration: underline; }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+
+        .hero {
+            padding: 10rem 10% 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(249, 115, 22, 0.15) 0%, transparent 50%);
+        }
+
+        h1 { font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; }
+        .hero p { font-size: 1.25rem; color: var(--text-alt); max-width: 700px; margin-bottom: 2.5rem; }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.4); }
+
+        .image-container {
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 2rem;
+            overflow: hidden;
+            border: 1px solid #334155;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+        .image-container img { width: 100%; display: block; }
+
+        .features { padding: 5rem 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid #334155;
+            transition: border-color 0.3s ease;
+        }
+        .card:hover { border-color: var(--primary); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary); }
+        .card p { color: var(--text-alt); }
+
+        .pricing { padding: 5rem 10%; text-align: center; }
+        h2 { font-size: 2.5rem; margin-bottom: 3rem; }
+        .pricing-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        .plan {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            border: 1px solid #334155;
+            width: 300px;
+        }
+        .plan.premium { border: 2px solid var(--primary); position: relative; }
+        .plan h4 { font-size: 1.25rem; margin-bottom: 1rem; }
+        .price { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; }
+
+        footer { padding: 5rem 10%; border-top: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; color: var(--text-alt); }
+        .footer-links a { color: var(--text-alt); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .navbar { padding: 1.5rem 5%; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Youth Engine</h1>
-        <p>Sistema automatizado de distribución de contenido para marcas de educación tecnológica y medios digitales.</p>
-        <div class="links">
-            <a href="terms.html">Terms of Service</a>
-            <a href="privacy.html">Privacy Policy</a>
+    <nav class="navbar">
+        <div class="logo">YOUTH ENGINE</div>
+        <a href="#login" class="btn" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">Iniciar Sesión</a>
+    </nav>
+
+    <header class="hero">
+        <h1>La Suite Definitiva para Creadores de Contenido</h1>
+        <p>Automatiza tu presencia en redes sociales con inteligencia artificial. Crea, publica y escala tus marcas de forma inteligente.</p>
+        <div class="cta">
+            <a href="#get-started" class="btn">Comenzar Gratis</a>
         </div>
-    </div>
+        <div class="image-container">
+            <img src="youth_engine_hero.png" alt="Panhel de Control Youth Engine">
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="card">
+            <h3>Generación de Guiones IA</h3>
+            <p>Utiliza arquitecturas avanzadas de LLM para transformar ideas en guiones virales para TikTok, Reels y Shorts.</p>
+        </div>
+        <div class="card">
+            <h3>Renderizado Automático</h3>
+            <p>Exporta videos de alta calidad directamente desde el motor de renderizado basado en la nube.</p>
+        </div>
+        <div class="card">
+            <h3>Publicación Directa</h3>
+            <p>Programa y publica contenido en TikTok, Instagram y Facebook con un solo clic.</p>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2>Planes para Creadores</h2>
+        <div class="pricing-grid">
+            <div class="plan">
+                <h4>Free</h4>
+                <div class="price">$0</div>
+                <p>Para entusiastas y bots de prueba.</p>
+            </div>
+            <div class="plan premium">
+                <h4>Pro</h4>
+                <div class="price">$29</div>
+                <p>Marcas ilimitadas y renderizado 4K.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Youth Engine Solutions. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="terms.html">Términos de Servicio</a>
+            <a href="privacy.html">Política de Privacidad</a>
+        </div>
+    </footer>
 </body>
 </html>
